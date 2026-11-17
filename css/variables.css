@@ -1,0 +1,28 @@
+:root {
+  /* Q-doc 品牌核心色票 */
+  --color-graphite: #222629;       /* 石墨黑 */
+  --color-graphite-light: #2f353a;
+  --color-lake-blue: #009FB7;      /* 湖水藍 */
+  --color-lake-blue-dark: #007f93;
+  --color-lake-blue-tint: #e6f7fa;
+  --color-white: #FFFFFF;          /* 純白 */
+  --color-coral-red: #FE4A49;      /* 珊瑚紅 (點綴與強調色) */
+  --color-coral-tint: #fff0f0;
+
+  /* 中性背景與邊框 */
+  --bg-workspace: #e9ecef;
+  --border-color: #d0d7de;
+  --text-muted: #5a626a;
+
+  /* 字體設定（支援動態切換三款字嗨字體） */
+  --font-ui: "Microsoft JhengHei", "PingFang TC", system-ui, -apple-system, sans-serif;
+  --active-bopomofo-font: "BpmfZihiKaiStd", "DFKai-SB", "標楷體", serif;
+  --font-bopomofo: var(--active-bopomofo-font);
+  --font-plain: "DFKai-SB", "標楷體", "Noto Serif TC", serif;
+
+  /* 陰影與圓角 */
+  --shadow-paper: 0 4px 20px rgba(34, 38, 41, 0.14);
+  --shadow-popover: 0 8px 24px rgba(34, 38, 41, 0.22);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}

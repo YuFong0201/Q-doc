@@ -1,0 +1,58 @@
+@media print {
+  body {
+    background: white;
+    height: auto;
+    overflow: visible;
+  }
+
+  .app-header,
+  .sidebar-left,
+  .polyphone-popover,
+  .loading-overlay,
+  .modal-backdrop,
+  .block-drag-handle,
+  .block-actions,
+  .tpl-inline-controls,
+  .opt-img-trigger,
+  .img-resize-toolbar,
+  .subq-opt-controls {
+    display: none !important;
+  }
+  
+  .canvas-viewport {
+    padding: 0;
+    overflow: visible;
+  }
+
+  .pages-container {
+    gap: 0;
+    padding-bottom: 0;
+  }
+
+  .paper-page {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: always;
+  }
+
+  .paper-page:last-child {
+    page-break-after: auto;
+  }
+
+  /* 空白畫布提示在列印時不出現 */
+  #page-1 .blocks-container:empty::before {
+    display: none !important;
+  }
+
+  .question-block {
+    border: none !important;
+    padding-left: 4px !important;
+    background: transparent !important;
+  }
+
+  /* 列印時自動隱藏破音字底色提示 */
+  .char-token.is-polyphone {
+    background-color: transparent !important;
+    border-bottom: none !important;
+  }
+}

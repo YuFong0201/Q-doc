@@ -1,0 +1,135 @@
+/* 特教與融合教育專用「無障礙報讀模式」樣式 */
+body.read-aloud-mode .ribbon-tabs,
+body.read-aloud-mode .ribbon-panels,
+body.read-aloud-mode .sidebar-left,
+body.read-aloud-mode #btn-clear-paper,
+body.read-aloud-mode #btn-print,
+body.read-aloud-mode .block-drag-handle,
+body.read-aloud-mode .block-actions,
+body.read-aloud-mode .tpl-inline-controls,
+body.read-aloud-mode .opt-img-trigger,
+body.read-aloud-mode .img-resize-toolbar,
+body.read-aloud-mode .subq-opt-controls,
+body.read-aloud-mode #polyphone-popover {
+  display: none !important;
+}
+
+/* 隱藏破音字黃底干擾，專注閱讀與聆聽 */
+body.read-aloud-mode .show-polyphone-hints .char-token.is-polyphone {
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+
+body.read-aloud-mode .canvas-viewport {
+  background: #e2e8f0;
+  padding-top: 64px;
+}
+
+/* 報讀模式下適度放大字體與間距，提升易讀性 */
+body.read-aloud-mode .blocks-container {
+  font-size: 18pt !important;
+  line-height: 2.1 !important;
+  gap: 18px;
+}
+
+body.read-aloud-mode .question-block {
+  padding: 12px 14px;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  background: var(--color-white);
+}
+
+/* 報讀模式頂部專用控制列 */
+.read-aloud-bar {
+  position: fixed;
+  top: 52px;
+  left: 0;
+  right: 0;
+  z-index: 950;
+  background: var(--color-lake-blue);
+  color: var(--color-white);
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  font-family: var(--font-ui);
+}
+
+.read-aloud-bar[hidden] {
+  display: none !important;
+}
+
+.ra-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.ra-bar-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ra-speed-select {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--color-white);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ra-speed-select option {
+  color: var(--color-graphite);
+}
+
+/* 每題右上角「唸整題」大按鈕 */
+.ra-speak-block-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-lake-blue);
+  color: var(--color-white);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 6px rgba(0, 159, 183, 0.3);
+  transition: transform 0.12s, background-color 0.15s;
+}
+
+.ra-speak-block-btn:hover {
+  background: #008296;
+  transform: translateY(-1px);
+}
+
+/* 可點擊朗讀的獨立段落 / 選項 / 例題區塊（移除額外 padding 避免影響既有彈性盒與換行排版） */
+body.read-aloud-mode .ra-clickable-target {
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.15s, box-shadow 0.15s;
+}
+
+body.read-aloud-mode .ra-clickable-target:hover {
+  background-color: var(--color-lake-blue-tint);
+  box-shadow: 0 0 0 3px var(--color-lake-blue-tint);
+}
+
+/* 正在朗讀中的區塊：珊瑚紅 (#FE4A49) 高對比外框高亮 */
+.ra-speaking-highlight {
+  outline: 3px solid var(--color-coral-red) !important;
+  background-color: #fff1f2 !important;
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px rgba(254, 74, 73, 0.18);
+}

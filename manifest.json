@@ -1,0 +1,17 @@
+{
+  "name": "奇蹟編輯器 Q-doc｜國小教師無障礙學習單與考卷編輯系統",
+  "short_name": "奇蹟編輯器 Q-doc",
+  "description": "專為國小與特教教師設計的免費開源學習單、考卷與無障礙語音報讀編輯系統",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#222629",
+  "theme_color": "#009FB7",
+  "lang": "zh-Hant-TW",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='24' fill='%23009FB7'/%3E%3Ctext x='64' y='88' font-family='sans-serif' font-weight='900' font-size='76' fill='white' text-anchor='middle'%3EQ%3C/text%3E%3C/svg%3E",
+      "sizes": "128x128",
+      "type": "image/svg+xml"
+    }
+  ]
+}

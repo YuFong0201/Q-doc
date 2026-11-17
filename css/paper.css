@@ -1,0 +1,459 @@
+/* 紙張基礎容器 */
+.paper-page {
+  background: var(--color-white);
+  box-shadow: var(--shadow-paper);
+  padding: 18mm 16mm;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.25s ease, height 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 四種紙張規格 (A4/B4 直向與橫向) */
+.paper-page.a4-portrait  { width: 210mm; height: 297mm; }
+.paper-page.a4-landscape { width: 297mm; height: 210mm; }
+.paper-page.b4-portrait  { width: 257mm; height: 364mm; }
+.paper-page.b4-landscape { width: 364mm; height: 257mm; }
+
+/* 頁碼角標 */
+.paper-page::after {
+  content: "第 " attr(data-page) " 頁";
+  position: absolute;
+  bottom: 8mm;
+  right: 14mm;
+  font-size: 9.5pt;
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+}
+
+/* 考卷標頭套版樣式 */
+.exam-header-slot {
+  border-bottom: 2px solid var(--color-graphite);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  font-family: var(--font-plain);
+  flex-shrink: 0;
+}
+
+.exam-header-slot:empty {
+  display: none;
+}
+
+.hdr-title {
+  text-align: center;
+  font-size: 18pt;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 0 8px;
+}
+
+.hdr-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12pt;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* 放大分數框尺寸並讓「分」字對齊右下角，保留充裕手寫空間 */
+.hdr-score-box {
+  border: 1.5px solid var(--color-graphite);
+  min-width: 88px;
+  min-height: 46px;
+  padding: 4px 10px 6px;
+  font-size: 13pt;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.hdr-worksheet-box {
+  border: 2px double var(--color-lake-blue);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+/* 題型積木容器（預設單欄 Flex 垂直排列） */
+.blocks-container {
+  flex: 1;
+  min-height: 0;
+  font-size: var(--paper-font-size, 14pt);
+  line-height: var(--paper-line-height, 1.8);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: visible;
+}
+
+/* 雙欄排版模式（仿 Word 先填滿左欄再自動流向右欄，並預留頂部空間防止首題懸浮工具列被裁切） */
+.blocks-container.cols-2 {
+  display: block;
+  column-count: 2;
+  column-gap: 11mm;
+  column-fill: auto;
+  height: 100%;
+  padding-top: 16px;
+  box-sizing: border-box;
+}
+
+/* 雙欄中央垂直分隔線樣式 */
+.blocks-container.cols-2.divider-none {
+  column-rule: none;
+}
+
+.blocks-container.cols-2.divider-dashed {
+  column-rule: 1.5px dashed #64748b;
+}
+
+.blocks-container.cols-2.divider-solid {
+  column-rule: 1.5px solid var(--color-graphite, #222629);
+}
+
+/* 雙欄模式下卡片改用 margin-bottom 維持間距並嚴格防止單題跨欄腰斬 */
+.blocks-container.cols-2 .question-block {
+  margin-bottom: 14px;
+  break-inside: avoid-column;
+  page-break-inside: avoid;
+}
+
+/* 雙欄窄寬度下自動緊湊化懸浮工具列，防止按鈕折行擠壓變形 */
+.blocks-container.cols-2 .block-actions {
+  right: 2px;
+  top: -15px;
+  padding: 2px 5px;
+  gap: 4px;
+  max-width: calc(100% - 4px);
+}
+
+.blocks-container.cols-2 .block-custom-controls {
+  gap: 3px;
+  padding-right: 4px;
+  flex-wrap: nowrap;
+}
+
+.blocks-container.cols-2 .block-custom-controls .tpl-inline-controls {
+  gap: 3px;
+  flex-wrap: nowrap;
+}
+
+.blocks-container.cols-2 .block-custom-controls .mini-pill-btn {
+  font-size: 10px;
+  padding: 1px 4px;
+  white-space: nowrap;
+}
+
+.blocks-container.cols-2 .block-sys-controls .block-act-btn {
+  font-size: 10px;
+  padding: 1px 5px;
+}
+
+/* 無障礙報讀模式下強制回復為單欄大字，確保特殊需求學生易讀 */
+body.read-aloud-mode .blocks-container.cols-2 {
+  display: flex !important;
+  column-count: 1 !important;
+  column-rule: none !important;
+  height: auto !important;
+  padding-top: 0 !important;
+}
+
+/* 停用狀態下的工具列下拉選單反白樣式 */
+.tool-select:disabled {
+  opacity: 0.45;
+  background-color: #e2e8f0;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+/* 第一頁完全空白時的友善提示（列印時自動隱藏） */
+#page-1 .blocks-container:empty::before {
+  content: "👈 這裡是一張乾淨的考卷畫布，請從左側「題型模板積木庫」點選或拖曳題型加入！";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  border: 2px dashed #cbd5e1;
+  border-radius: 10px;
+  color: #94a3b8;
+  font-family: var(--font-ui);
+  font-size: 11pt;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* 全卷注音模式切換 */
+.bopo-default-on {
+  font-family: var(--font-bopomofo);
+}
+
+.bopo-default-off {
+  font-family: var(--font-plain);
+}
+
+/* 單字強制開啟/隱藏注音 */
+.char-token.force-bopo { font-family: var(--font-bopomofo) !important; }
+.char-token.hide-bopo  { font-family: var(--font-plain) !important; }
+
+/* 破音字標記與底色提示 */
+.char-token {
+  cursor: text;
+  border-radius: 3px;
+  padding: 0 1px;
+}
+
+.polyphone-edit-active .char-token {
+  cursor: pointer;
+}
+
+.polyphone-edit-active .char-token:hover {
+  background-color: var(--color-lake-blue-tint);
+}
+
+.show-polyphone-hints .char-token.is-polyphone {
+  background-color: #fef08a;
+  border-bottom: 2px solid var(--color-coral-red);
+}
+
+/* 國小低、中年級超綱生難字標記（列印時自動隱藏） */
+.char-token.is-hard-vocab {
+  border-bottom: 2px dashed #8b5cf6;
+  background-color: rgba(139, 92, 246, 0.08);
+}
+
+@media print {
+  .char-token.is-hard-vocab {
+    border-bottom: none !important;
+    background-color: transparent !important;
+  }
+
+  .blocks-container.cols-2 {
+    padding-top: 0 !important;
+  }
+}
+
+/* 題型區塊卡片 (Question Block) */
+.question-block {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 6px 8px 6px 28px;
+  transition: border-color 0.15s, background-color 0.15s;
+  break-inside: avoid;
+}
+
+.question-block:hover,
+.question-block:focus-within {
+  border-color: var(--color-lake-blue);
+  background-color: rgba(0, 159, 183, 0.02);
+}
+
+/* 拖曳把手 */
+.block-drag-handle {
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 18px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  cursor: grab;
+  font-size: 14px;
+  user-select: none;
+  opacity: 0.4;
+}
+
+.question-block:hover .block-drag-handle {
+  opacity: 1;
+  color: var(--color-lake-blue);
+}
+
+/* 卡片右上角懸浮控制列（確保所有按鈕單行不折行、不被擠壓變形） */
+.block-actions {
+  position: absolute;
+  right: 6px;
+  top: -15px;
+  background: var(--color-graphite);
+  border-radius: 5px;
+  padding: 3px 8px;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  z-index: 25;
+  font-family: var(--font-ui);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.question-block:hover .block-actions,
+.question-block:focus-within .block-actions {
+  display: flex;
+}
+
+.block-custom-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding-right: 8px;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+.block-custom-controls .tpl-inline-controls {
+  margin-left: 0;
+  gap: 4px;
+}
+
+.block-custom-controls .mini-pill-btn {
+  background: rgba(0, 159, 183, 0.22);
+  border: 1px solid var(--color-lake-blue);
+  color: #e0f2fe;
+  font-size: 11px;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+.block-custom-controls .mini-pill-btn:hover:not(:disabled) {
+  background: var(--color-lake-blue);
+  color: var(--color-white);
+}
+
+.block-sys-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.block-sys-controls .block-act-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sortable-ghost {
+  opacity: 0.4;
+  background: var(--color-lake-blue-tint);
+  border: 2px dashed var(--color-lake-blue);
+}
+
+/* 可編輯文字區 */
+[contenteditable="true"] {
+  outline: none;
+}
+
+/* 破音字迷你彈窗與圖表彈窗 */
+.polyphone-popover {
+  position: fixed;
+  z-index: 1000;
+  background: var(--color-white);
+  border: 2px solid var(--color-lake-blue);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-popover);
+  width: 210px;
+  overflow: hidden;
+}
+
+.polyphone-popover[hidden],
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.popover-header {
+  background: var(--color-graphite);
+  color: var(--color-white);
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popover-char { font-size: 1.1rem; font-weight: bold; color: var(--color-lake-blue); }
+.popover-close { background: none; border: none; color: var(--color-white); cursor: pointer; font-size: 1rem; }
+.popover-options { padding: 6px; display: flex; flex-direction: column; gap: 4px; }
+
+.reading-option-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  cursor: pointer;
+  font-family: var(--font-ui);
+}
+
+.reading-option-btn:hover { background: var(--color-lake-blue-tint); border-color: var(--color-lake-blue); }
+.reading-option-btn.selected { background: var(--color-lake-blue); color: var(--color-white); }
+.reading-bopo { font-weight: 700; font-size: 0.95rem; }
+.reading-ex { font-size: 0.75rem; opacity: 0.85; }
+.popover-footer { border-top: 1px solid var(--border-color); padding: 6px; background: #f8fafc; }
+
+.popover-action-btn {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid var(--color-coral-red);
+  color: var(--color-coral-red);
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 圖表設定 Modal 彈窗 */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(34, 38, 41, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-card {
+  background: var(--color-white);
+  width: min(480px, 92vw);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-popover);
+}
+
+.modal-header {
+  background: var(--color-graphite);
+  color: var(--color-white);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 { margin: 0; font-size: 1.05rem; }
+.modal-body { padding: 16px; font-family: var(--font-ui); font-size: 0.9rem; }
+.form-row { margin-bottom: 12px; }
+.form-row.two-cols { display: flex; gap: 12px; align-items: center; }
+.full-input { width: 100%; margin-top: 4px; }
+.chart-data-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.chart-data-table th, .chart-data-table td { border: 1px solid var(--border-color); padding: 6px; text-align: left; }
+.chart-data-table input { width: 100%; border: 1px solid #cbd5e1; padding: 4px; border-radius: 3px; }
+.modal-footer { padding: 10px 16px; background: #f8fafc; border-top: 1px solid var(--border-color); text-align: right; }
+
+/* 教師解答卷 vs 學生空白卷一鍵切換 */
+body.student-blank-mode .qdoc-answer-key {
+  color: transparent !important;
+  text-shadow: none !important;
+  user-select: none;
+}
+
+@media print {
+  body.student-blank-mode .qdoc-answer-key {
+    color: transparent !important;
+  }
+}

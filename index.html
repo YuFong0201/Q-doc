@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>奇蹟編輯器 Q-doc｜開玩笑的，沒有奇蹟</title>
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/toolbar.css" />
+  <link rel="stylesheet" href="css/paper.css" />
+  <link rel="stylesheet" href="css/templates.css" />
+  <link rel="stylesheet" href="css/read-aloud.css" />
+  <link rel="stylesheet" href="css/print.css" media="print" />
+  <style id="dynamic-page-style"></style>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
+</head>
+<body>
+  <div id="loading-overlay" class="loading-overlay" role="dialog" aria-modal="true" aria-labelledby="loading-title">
+    <div class="loading-card">
+      <div class="brand-badge">Q-doc</div>
+      <h1 id="loading-title">編輯器啟動中</h1>
+      <p id="loading-status" class="loading-status">正在載入字嗨注音字庫與破音字引擎...</p>
+      <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar-container">
+        <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+      </div>
+      <div id="progress-percent" class="progress-percent">0%</div>
+    </div>
+  </div>
+
+  <header class="app-header">
+    <div class="top-bar">
+      <div class="brand-area">
+        <a href="https://yufong0201.github.io/Support-Classroom/" target="_blank" rel="noopener noreferrer" class="logo-mark" aria-label="前往 Support Classroom 首頁" title="前往 Support Classroom" style="text-decoration: none;">Q</a>
+        <span class="app-title">奇蹟編輯器 <small>Q-doc</small></span>
+      </div>
+      <div class="doc-meta" style="display:flex; align-items:center; gap:8px;">
+        <input type="text" id="doc-title-input" class="doc-title-input" value="未命名學習單與考卷" aria-label="考卷檔案名稱" />
+        <button type="button" id="save-status-indicator" class="save-status-pill status-saved" aria-live="polite" title="自動存檔狀態（點擊可立即儲存）">
+          <span class="save-dot"></span> 已存檔
+        </button>
+      </div>
+      <div class="top-actions">
+        <span id="score-status-badge" class="score-status-badge is-neutral" role="status" aria-live="polite">總分：0 分</span>
+        <button type="button" id="btn-export-json" class="btn btn-outline-light" title="下載 .json 專案檔方便分享或備份">💾 匯出專案</button>
+        <button type="button" id="btn-import-json" class="btn btn-outline-light" title="開啟已儲存的 .json 專案檔">📂 匯入專案</button>
+        <input type="file" id="file-import-json" accept=".json,application/json" hidden />
+        <button type="button" id="btn-toggle-read-aloud" class="btn btn-outline-light" aria-label="切換無障礙語音報讀模式">🔊 無障礙報讀模式</button>
+        <button type="button" id="btn-clear-paper" class="btn btn-outline-light" aria-label="清空考卷">🗑️ 清空重來</button>
+        <button type="button" id="btn-print" class="btn btn-primary" aria-label="列印或匯出 PDF">🖨️ 列印 / 匯出 PDF</button>
+      </div>
+    </div>
+
+    <nav class="ribbon-tabs" role="tablist" aria-label="編輯功能分頁">
+      <button role="tab" aria-selected="true" aria-controls="tab-home" class="tab-btn active" data-tab="tab-home">常用編輯</button>
+      <button role="tab" aria-selected="false" aria-controls="tab-layout" class="tab-btn" data-tab="tab-layout">版面與紙張</button>
+      <button role="tab" aria-selected="false" aria-controls="tab-bopomofo" class="tab-btn" data-tab="tab-bopomofo">破音字設定</button>
+      <button role="tab" aria-selected="false" aria-controls="tab-vocab" class="tab-btn" data-tab="tab-vocab">生難字與字數檢查</button>
+    </nav>
+
+    <div class="ribbon-panels">
+      <!-- 分頁 1：常用編輯 -->
+      <div id="tab-home" class="ribbon-panel active" role="tabpanel">
+        <div class="tool-group">
+          <span class="group-label">字體與大小</span>
+          <div class="tool-row">
+            <select id="select-font-family" class="tool-select" aria-label="選擇字體">
+              <option value="BpmfZihiKaiStd" selected>字嗨注音標楷 (有注音)</option>
+              <option value="BpmfZihiSansRegular">字嗨注音黑體 - 標準 (有注音)</option>
+              <option value="BpmfZihiSansBold">字嗨注音黑體 - 粗體 (有注音)</option>
+              <option value="DFKaiPlain">標楷體 (無注音)</option>
+            </select>
+            <select id="select-font-size" class="tool-select" aria-label="字體大小">
+              <option value="12pt">12 pt (小)</option>
+              <option value="14pt" selected>14 pt (標準)</option>
+              <option value="16pt">16 pt (中年級)</option>
+              <option value="20pt">20 pt (低年級大字)</option>
+              <option value="24pt">24 pt (標題)</option>
+            </select>
+            <button type="button" class="tool-btn" data-cmd="bold" aria-label="粗體" title="粗體 (Ctrl+B)"><b>B</b></button>
+            <button type="button" class="tool-btn" data-cmd="italic" aria-label="斜體" title="斜體 (Ctrl+I)"><i>I</i></button>
+            <button type="button" class="tool-btn" data-cmd="underline" aria-label="底線" title="底線 (Ctrl+U)"><u>U</u></button>
+            <input type="color" id="input-text-color" value="#222629" class="tool-color" aria-label="文字顏色" title="文字顏色" />
+          </div>
+        </div>
+
+        <div class="tool-divider"></div>
+
+        <div class="tool-group">
+          <span class="group-label">段落與行距</span>
+          <div class="tool-row">
+            <button type="button" class="tool-btn" data-cmd="justifyLeft" aria-label="靠左對齊">靠左</button>
+            <button type="button" class="tool-btn" data-cmd="justifyCenter" aria-label="置中對齊">置中</button>
+            <button type="button" class="tool-btn" data-cmd="justifyRight" aria-label="靠右對齊">靠右</button>
+            <select id="select-line-height" class="tool-select" aria-label="行距">
+              <option value="1.5">1.5 倍行距</option>
+              <option value="1.8" selected>1.8 倍 (含注音推薦)</option>
+              <option value="2.2">2.2 倍 (寬鬆)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tool-divider"></div>
+
+        <div class="tool-group">
+          <span class="group-label">教師解答卷切換</span>
+          <div class="tool-row" style="gap: 10px;">
+            <button type="button" id="btn-mark-answer-key" class="tool-btn accent-btn" title="將反白選取的文字標記為紅色標準解答">🖍️ 標記紅字解答</button>
+            <label class="toggle-switch-label" for="chk-hide-answer-key">
+              <input type="checkbox" id="chk-hide-answer-key" class="toggle-switch-input" />
+              <span class="toggle-switch-track" aria-hidden="true"></span>
+              <span class="toggle-switch-text">學生空白卷（隱藏紅字解答）</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 分頁 2：版面與紙張 -->
+      <div id="tab-layout" class="ribbon-panel" role="tabpanel" hidden>
+        <div class="tool-group">
+          <span class="group-label">紙張規格 (A4 / B4 直橫)</span>
+          <div class="tool-row">
+            <select id="select-paper-size" class="tool-select" aria-label="選擇紙張規格">
+              <option value="a4-portrait" selected>A4 直向 (210 × 297 mm)</option>
+              <option value="a4-landscape">A4 橫向 (297 × 210 mm)</option>
+              <option value="b4-portrait">B4 直向 (257 × 364 mm)</option>
+              <option value="b4-landscape">B4 橫向 (364 × 257 mm)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tool-divider"></div>
+
+        <div class="tool-group">
+          <span class="group-label">欄數與中央分隔線</span>
+          <div class="tool-row" style="gap: 8px;">
+            <select id="select-column-layout" class="tool-select" aria-label="選擇版面欄數">
+              <option value="1" selected>一欄 (標準單欄)</option>
+              <option value="2">二欄 (左右雙欄)</option>
+            </select>
+            <select id="select-column-divider" class="tool-select" aria-label="選擇雙欄中央分隔線樣式" disabled title="切換為「二欄」後即可選擇分隔線樣式">
+              <option value="none" selected>分隔線：留白 (無)</option>
+              <option value="dashed">分隔線：虛線</option>
+              <option value="solid">分隔線：實線</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tool-divider"></div>
+
+        <div class="tool-group">
+          <span class="group-label">考卷標頭套版</span>
+          <div class="tool-row">
+            <select id="select-header-template" class="tool-select" aria-label="考卷標頭套版">
+              <option value="exam" selected>正式段考卷 (含分數與家長簽名)</option>
+              <option value="quiz">隨堂小考卷 (精簡橫幅)</option>
+              <option value="worksheet">素養學習單 (無分數格)</option>
+              <option value="none">無標頭 (純題目模式)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- 分頁 3：破音字設定 -->
+      <div id="tab-bopomofo" class="ribbon-panel" role="tabpanel" hidden>
+        <div class="tool-group">
+          <span class="group-label">破音字輔助工具</span>
+          <div class="tool-row" style="gap: 14px;">
+            <button type="button" id="btn-scan-polyphones" class="tool-btn accent-btn">🔍 掃描全卷破音字</button>
+
+            <label class="toggle-switch-label" for="chk-enable-polyphone-edit">
+              <input type="checkbox" id="chk-enable-polyphone-edit" class="toggle-switch-input" />
+              <span class="toggle-switch-track" aria-hidden="true"></span>
+              <span class="toggle-switch-text">破音字點擊編輯</span>
+            </label>
+
+            <label class="toggle-switch-label" for="chk-highlight-polyphones">
+              <input type="checkbox" id="chk-highlight-polyphones" class="toggle-switch-input" checked />
+              <span class="toggle-switch-track" aria-hidden="true"></span>
+              <span class="toggle-switch-text">顯示破音字底色提示（列印自動隱藏）</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 分頁 4：生難字與字數檢查（新增修復） -->
+      <div id="tab-vocab" class="ribbon-panel" role="tabpanel" hidden>
+        <div class="tool-group">
+          <span class="group-label">超綱生難字檢測（依據國教院字頻與課綱常用字庫）</span>
+          <div class="tool-row" style="gap: 10px;">
+            <select id="select-vocab-grade" class="tool-select" aria-label="選擇檢測年段字庫">
+              <option value="grade12" selected>低年級標準（一、二年級約 750 核心字）</option>
+              <option value="grade34">中年級標準（三、四年級約 1,550 核心字）</option>
+            </select>
+            <button type="button" id="btn-check-hard-vocab" class="tool-btn accent-btn">🔎 標記超綱生難字</button>
+            <button type="button" id="btn-clear-hard-vocab" class="tool-btn">🧹 清除生難字標記</button>
+          </div>
+        </div>
+
+        <div class="tool-divider"></div>
+
+        <div class="tool-group">
+          <span class="group-label">全卷字數即時統計</span>
+          <div class="tool-row">
+            <span id="vocab-char-count" class="score-status-badge is-neutral" role="status" aria-live="polite">📝 全卷國字：0 字（含標點共 0 字）</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 無障礙報讀模式專用浮動控制列 -->
+  <div id="read-aloud-bar" class="read-aloud-bar" role="region" aria-label="語音報讀控制列" hidden>
+    <div class="ra-bar-left">
+      <span>🔊 無障礙語音報讀模式已啟動（點擊題目右上角「唸整題」或直接點選任一選項朗讀）</span>
+    </div>
+    <div class="ra-bar-controls">
+      <label for="select-ra-speed" style="font-size:0.85rem;">語速：</label>
+      <select id="select-ra-speed" class="ra-speed-select" aria-label="選擇朗讀語速">
+        <option value="0.7">0.7x (慢速清晰)</option>
+        <option value="1.0" selected>1.0x (標準語速)</option>
+        <option value="1.25">1.25x (稍快)</option>
+      </select>
+      <button type="button" id="btn-ra-stop" class="btn btn-outline-light">⏹️ 停止朗讀</button>
+      <button type="button" id="btn-ra-exit" class="btn btn-primary" style="background:#222629;">✕ 退出報讀</button>
+    </div>
+  </div>
+
+  <main class="workspace">
+    <aside class="sidebar-left" aria-label="題型模板積木庫">
+      <div class="sidebar-header">
+        <h2>題型模板庫</h2>
+        <p class="sidebar-sub">點選或拖曳下方模板插入考卷，卡片可自由上下排序</p>
+      </div>
+
+      <div id="subject-filter-bar" class="subject-filter-bar" role="group" aria-label="依科目篩選模板">
+        <button type="button" class="subject-tag active" data-subject="全部">全部</button>
+        <button type="button" class="subject-tag" data-subject="國語">國語</button>
+        <button type="button" class="subject-tag" data-subject="數學">數學</button>
+        <button type="button" class="subject-tag" data-subject="英語">英語</button>
+        <button type="button" class="subject-tag" data-subject="自然">自然</button>
+        <button type="button" class="subject-tag" data-subject="社會">社會</button>
+        <button type="button" class="subject-tag" data-subject="生活">生活</button>
+      </div>
+
+      <div id="template-list" class="template-list"></div>
+    </aside>
+
+    <section class="canvas-viewport" aria-label="考卷編輯畫布">
+      <div id="pages-container" class="pages-container">
+        <article id="page-1" class="paper-page a4-portrait" data-page="1">
+          <div id="exam-header-slot" class="exam-header-slot"></div>
+          <div id="editor-content" class="editor-content blocks-container bopo-default-on show-polyphone-hints" aria-label="考卷題目編輯區"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="polyphone-popover" class="polyphone-popover" role="dialog" aria-label="選擇注音讀音" hidden>
+    <div class="popover-header">
+      <span id="popover-char-title" class="popover-char">字</span>
+      <button type="button" id="btn-close-popover" class="popover-close" aria-label="關閉選單">✕</button>
+    </div>
+    <div id="popover-options" class="popover-options"></div>
+    <div class="popover-footer">
+      <button type="button" id="btn-toggle-single-bopo" class="popover-action-btn">隱藏此字注音</button>
+    </div>
+  </div>
+
+  <!-- 數學統計圖表編輯器彈窗 -->
+  <div id="chart-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="chart-modal-title" hidden>
+    <div class="modal-card" style="width: min(580px, 95vw);">
+      <div class="modal-header">
+        <h3 id="chart-modal-title">📊 自訂國小數學統計圖表</h3>
+        <button type="button" id="btn-close-chart-modal" class="popover-close" aria-label="關閉圖表設定">✕</button>
+      </div>
+      <div class="modal-body" style="max-height: 75vh; overflow-y: auto;">
+        <div class="form-row">
+          <label for="chart-title-input">圖表標題：</label>
+          <input type="text" id="chart-title-input" class="tool-select full-input" value="三年甲班最喜歡的水果統計圖" />
+        </div>
+        <div class="form-row two-cols">
+          <div style="flex:1;">
+            <label for="chart-type-select">圖表類型：</label>
+            <select id="chart-type-select" class="tool-select full-input">
+              <option value="bar">直立長條圖 (垂直長條)</option>
+              <option value="horizontalBar">橫向長條圖 (水平長條)</option>
+              <option value="stackedBar">堆疊長條圖 (累計長條)</option>
+              <option value="line">折線圖 (趨勢變化)</option>
+              <option value="pie">圓餅圖 (比例分配)</option>
+            </select>
+          </div>
+          <label class="toggle-switch-label" for="chart-show-values" style="padding-top: 18px;">
+            <input type="checkbox" id="chart-show-values" class="toggle-switch-input" checked />
+            <span class="toggle-switch-track" aria-hidden="true"></span>
+            <span class="toggle-switch-text"><strong>圖上直接顯示數值</strong></span>
+          </label>
+        </div>
+        <div class="form-row two-cols">
+          <div style="flex:1;">
+            <label for="chart-x-label">橫軸 (X軸) 名稱/單位：</label>
+            <input type="text" id="chart-x-label" class="tool-select full-input" value="水果種類" />
+          </div>
+          <div style="flex:1;">
+            <label for="chart-y-label">縱軸 (Y軸) 名稱/單位：</label>
+            <input type="text" id="chart-y-label" class="tool-select full-input" value="人數 (人)" />
+          </div>
+        </div>
+        <div style="overflow-x: auto;">
+          <table class="chart-data-table" id="chart-data-table">
+            <thead id="chart-data-thead">
+              <tr>
+                <th>項目名稱</th>
+                <th style="width: 90px;">數值</th>
+                <th style="width: 60px; text-align:center;">顏色</th>
+                <th style="width: 65px; text-align:center;">操作</th>
+              </tr>
+            </thead>
+            <tbody id="chart-data-tbody"></tbody>
+          </table>
+        </div>
+        <div style="display:flex; gap:8px; margin-top:8px; flex-wrap:wrap;">
+          <button type="button" id="btn-add-chart-row" class="btn btn-outline">＋ 新增長條項目</button>
+          <button type="button" id="btn-add-stacked-series" class="btn btn-outline" hidden>＋ 新增堆疊分層 (如：男生/女生)</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn-save-chart" class="btn btn-primary">套用並繪製圖表</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="a11y-announcer" class="sr-only" aria-live="polite"></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

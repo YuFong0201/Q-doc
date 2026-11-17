@@ -1,0 +1,579 @@
+{
+  "重": [
+    { "bopomofo": "ㄓㄨㄥˋ", "ivsIndex": 0, "example": "重量、重要" },
+    { "bopomofo": "ㄔㄨㄥˊ", "ivsIndex": 1, "example": "重複、重新" }
+  ],
+  "行": [
+    { "bopomofo": "ㄒㄧㄥˊ", "ivsIndex": 0, "example": "行走、旅行" },
+    { "bopomofo": "ㄏㄤˊ", "ivsIndex": 1, "example": "銀行、行業" }
+  ],
+  "長": [
+    { "bopomofo": "ㄔㄤˊ", "ivsIndex": 0, "example": "長短、長江" },
+    { "bopomofo": "ㄓㄤˇ", "ivsIndex": 1, "example": "長大、班長" }
+  ],
+  "樂": [
+    { "bopomofo": "ㄌㄜˋ", "ivsIndex": 0, "example": "快樂、樂趣" },
+    { "bopomofo": "ㄩㄝˋ", "ivsIndex": 1, "example": "音樂、樂器" },
+    { "bopomofo": "ㄧㄠˋ", "ivsIndex": 2, "example": "仁者樂山" }
+  ],
+  "數": [
+    { "bopomofo": "ㄕㄨˋ", "ivsIndex": 0, "example": "數學、數字" },
+    { "bopomofo": "ㄕㄨˇ", "ivsIndex": 1, "example": "數一數、數落" },
+    { "bopomofo": "ㄕㄨㄛˋ", "ivsIndex": 2, "example": "數見不鮮" }
+  ],
+  "覺": [
+    { "bopomofo": "ㄐㄩㄝˊ", "ivsIndex": 0, "example": "覺得、感覺" },
+    { "bopomofo": "ㄐㄧㄠˋ", "ivsIndex": 1, "example": "睡覺" }
+  ],
+  "和": [
+    { "bopomofo": "ㄏㄜˊ", "ivsIndex": 0, "example": "和平、我和你" },
+    { "bopomofo": "ㄏㄢˋ", "ivsIndex": 1, "example": "你和我（口語）" },
+    { "bopomofo": "ㄏㄨㄛˋ", "ivsIndex": 2, "example": "和麵、和稀泥" },
+    { "bopomofo": "ㄏㄜˋ", "ivsIndex": 3, "example": "附和、曲高和寡" }
+  ],
+  "得": [
+    { "bopomofo": "ㄉㄜˊ", "ivsIndex": 0, "example": "得到、得分" },
+    { "bopomofo": "ㄉㄜ˙", "ivsIndex": 1, "example": "跑得快" },
+    { "bopomofo": "ㄉㄟˇ", "ivsIndex": 2, "example": "總得、非得" }
+  ],
+  "的": [
+    { "bopomofo": "ㄉㄜ˙", "ivsIndex": 0, "example": "我的、紅紅的" },
+    { "bopomofo": "ㄉㄧˋ", "ivsIndex": 1, "example": "目的、標的" },
+    { "bopomofo": "ㄉㄧˊ", "ivsIndex": 2, "example": "的確" }
+  ],
+  "地": [
+    { "bopomofo": "ㄉㄧˋ", "ivsIndex": 0, "example": "土地、地球" },
+    { "bopomofo": "ㄉㄜ˙", "ivsIndex": 1, "example": "慢慢地走" }
+  ],
+  "了": [
+    { "bopomofo": "ㄌㄜ˙", "ivsIndex": 0, "example": "好了、吃飽了" },
+    { "bopomofo": "ㄌㄧㄠˇ", "ivsIndex": 1, "example": "了解、一目了然" }
+  ],
+  "著": [
+    { "bopomofo": "ㄓㄜ˙", "ivsIndex": 0, "example": "看著、走著" },
+    { "bopomofo": "ㄓㄠˊ", "ivsIndex": 1, "example": "著急、睡著" },
+    { "bopomofo": "ㄓㄨㄛˊ", "ivsIndex": 2, "example": "穿著、著陸" },
+    { "bopomofo": "ㄓㄨˋ", "ivsIndex": 3, "example": "著名、著作" }
+  ],
+  "為": [
+    { "bopomofo": "ㄨㄟˊ", "ivsIndex": 0, "example": "成為、行為" },
+    { "bopomofo": "ㄨㄟˋ", "ivsIndex": 1, "example": "為什麼、因為" }
+  ],
+  "發": [
+    { "bopomofo": "ㄈㄚ", "ivsIndex": 0, "example": "發現、出發" },
+    { "bopomofo": "ㄈㄚˇ", "ivsIndex": 1, "example": "頭髮、理髮" }
+  ],
+  "還": [
+    { "bopomofo": "ㄏㄞˊ", "ivsIndex": 0, "example": "還有、還是" },
+    { "bopomofo": "ㄏㄨㄢˊ", "ivsIndex": 1, "example": "還書、歸還" }
+  ],
+  "看": [
+    { "bopomofo": "ㄎㄢˋ", "ivsIndex": 0, "example": "看見、看書" },
+    { "bopomofo": "ㄎㄢ", "ivsIndex": 1, "example": "看守、看門" }
+  ],
+  "背": [
+    { "bopomofo": "ㄅㄟˋ", "ivsIndex": 0, "example": "背後、背誦" },
+    { "bopomofo": "ㄅㄟ", "ivsIndex": 1, "example": "背書包、背負" }
+  ],
+  "教": [
+    { "bopomofo": "ㄐㄧㄠˋ", "ivsIndex": 0, "example": "教室、教育" },
+    { "bopomofo": "ㄐㄧㄠ", "ivsIndex": 1, "example": "教書、教導" }
+  ],
+  "好": [
+    { "bopomofo": "ㄏㄠˇ", "ivsIndex": 0, "example": "好人、美好" },
+    { "bopomofo": "ㄏㄠˋ", "ivsIndex": 1, "example": "好奇、愛好" }
+  ],
+  "空": [
+    { "bopomofo": "ㄎㄨㄥ", "ivsIndex": 0, "example": "天空、空氣" },
+    { "bopomofo": "ㄎㄨㄥˋ", "ivsIndex": 1, "example": "空白、有空" }
+  ],
+  "相": [
+    { "bopomofo": "ㄒㄧㄤ", "ivsIndex": 0, "example": "相信、互相" },
+    { "bopomofo": "ㄒㄧㄤˋ", "ivsIndex": 1, "example": "相片、長相" }
+  ],
+  "間": [
+    { "bopomofo": "ㄐㄧㄢ", "ivsIndex": 0, "example": "時間、房間" },
+    { "bopomofo": "ㄐㄧㄢˋ", "ivsIndex": 1, "example": "間隔、間接" }
+  ],
+  "難": [
+    { "bopomofo": "ㄋㄢˊ", "ivsIndex": 0, "example": "困難、難過" },
+    { "bopomofo": "ㄋㄢˋ", "ivsIndex": 1, "example": "災難、避難" }
+  ],
+  "分": [
+    { "bopomofo": "ㄈㄣ", "ivsIndex": 0, "example": "分數、分開" },
+    { "bopomofo": "ㄈㄣˋ", "ivsIndex": 1, "example": "身分、本分" }
+  ],
+  "少": [
+    { "bopomofo": "ㄕㄠˇ", "ivsIndex": 0, "example": "多少、減少" },
+    { "bopomofo": "ㄕㄠˋ", "ivsIndex": 1, "example": "少年、少女" }
+  ],
+  "落": [
+    { "bopomofo": "ㄌㄨㄛˋ", "ivsIndex": 0, "example": "落葉、降落" },
+    { "bopomofo": "ㄌㄚˋ", "ivsIndex": 1, "example": "丟三落四、落掉" },
+    { "bopomofo": "ㄌㄠˋ", "ivsIndex": 2, "example": "落枕、落色" }
+  ],
+  "差": [
+    { "bopomofo": "ㄔㄚ", "ivsIndex": 0, "example": "差別、相差" },
+    { "bopomofo": "ㄔㄚˋ", "ivsIndex": 1, "example": "差不多、太差" },
+    { "bopomofo": "ㄔㄞ", "ivsIndex": 2, "example": "出差、差遣" },
+    { "bopomofo": "ㄘ", "ivsIndex": 3, "example": "參差不齊" }
+  ],
+  "朝": [
+    { "bopomofo": "ㄔㄠˊ", "ivsIndex": 0, "example": "朝代、朝向" },
+    { "bopomofo": "ㄓㄠ", "ivsIndex": 1, "example": "朝陽、今朝" }
+  ],
+  "調": [
+    { "bopomofo": "ㄉㄧㄠˋ", "ivsIndex": 0, "example": "調查、聲調" },
+    { "bopomofo": "ㄊㄧㄠˊ", "ivsIndex": 1, "example": "調整、調味" }
+  ],
+  "處": [
+    { "bopomofo": "ㄔㄨˋ", "ivsIndex": 0, "example": "到處、好處" },
+    { "bopomofo": "ㄔㄨˇ", "ivsIndex": 1, "example": "處理、相處" }
+  ],
+  "種": [
+    { "bopomofo": "ㄓㄨㄥˇ", "ivsIndex": 0, "example": "種類、種子" },
+    { "bopomofo": "ㄓㄨㄥˋ", "ivsIndex": 1, "example": "種花、種田" }
+  ],
+  "量": [
+    { "bopomofo": "ㄌㄧㄤˋ", "ivsIndex": 0, "example": "力量、重量" },
+    { "bopomofo": "ㄌㄧㄤˊ", "ivsIndex": 1, "example": "測量、量身高" }
+  ],
+  "彈": [
+    { "bopomofo": "ㄊㄢˊ", "ivsIndex": 0, "example": "彈琴、彈性" },
+    { "bopomofo": "ㄉㄢˋ", "ivsIndex": 1, "example": "子彈、炸彈" }
+  ],
+  "擔": [
+    { "bopomofo": "ㄉㄢ", "ivsIndex": 0, "example": "擔心、擔任" },
+    { "bopomofo": "ㄉㄢˋ", "ivsIndex": 1, "example": "重擔、扁擔" }
+  ],
+  "倒": [
+    { "bopomofo": "ㄉㄠˇ", "ivsIndex": 0, "example": "跌倒、倒閉" },
+    { "bopomofo": "ㄉㄠˋ", "ivsIndex": 1, "example": "倒水、倒立" }
+  ],
+  "轉": [
+    { "bopomofo": "ㄓㄨㄢˇ", "ivsIndex": 0, "example": "轉彎、轉學" },
+    { "bopomofo": "ㄓㄨㄢˋ", "ivsIndex": 1, "example": "旋轉、轉圈" }
+  ],
+  "傳": [
+    { "bopomofo": "ㄔㄨㄢˊ", "ivsIndex": 0, "example": "傳說、傳遞" },
+    { "bopomofo": "ㄓㄨㄢˋ", "ivsIndex": 1, "example": "傳記、自傳" }
+  ],
+  "結": [
+    { "bopomofo": "ㄐㄧㄝˊ", "ivsIndex": 0, "example": "結果、結束" },
+    { "bopomofo": "ㄐㄧㄝ", "ivsIndex": 1, "example": "結實、開花結果" }
+  ],
+  "給": [
+    { "bopomofo": "ㄍㄟˇ", "ivsIndex": 0, "example": "送給、交給" },
+    { "bopomofo": "ㄐㄧˇ", "ivsIndex": 1, "example": "供給、自給自足" }
+  ],
+  "省": [
+    { "bopomofo": "ㄕㄥˇ", "ivsIndex": 0, "example": "節省、省略" },
+    { "bopomofo": "ㄒㄧㄥˇ", "ivsIndex": 1, "example": "反省、省親" }
+  ],
+  "假": [
+    { "bopomofo": "ㄐㄧㄚˇ", "ivsIndex": 0, "example": "真假、假如" },
+    { "bopomofo": "ㄐㄧㄚˋ", "ivsIndex": 1, "example": "放假、請假" }
+  ],
+  "角": [
+    { "bopomofo": "ㄐㄧㄠˇ", "ivsIndex": 0, "example": "角落、三角形" },
+    { "bopomofo": "ㄐㄩㄝˊ", "ivsIndex": 1, "example": "角色、主角" }
+  ],
+  "興": [
+    { "bopomofo": "ㄒㄧㄥ", "ivsIndex": 0, "example": "興奮、復興" },
+    { "bopomofo": "ㄒㄧㄥˋ", "ivsIndex": 1, "example": "高興、興趣" }
+  ],
+  "應": [
+    { "bopomofo": "ㄧㄥ", "ivsIndex": 0, "example": "應該、應當" },
+    { "bopomofo": "ㄧㄥˋ", "ivsIndex": 1, "example": "答應、反應" }
+  ],
+  "當": [
+    { "bopomofo": "ㄉㄤ", "ivsIndex": 0, "example": "當然、當作" },
+    { "bopomofo": "ㄉㄤˋ", "ivsIndex": 1, "example": "適當、上當" }
+  ],
+  "將": [
+    { "bopomofo": "ㄐㄧㄤ", "ivsIndex": 0, "example": "將來、將要" },
+    { "bopomofo": "ㄐㄧㄤˋ", "ivsIndex": 1, "example": "將軍、大將" }
+  ],
+  "更": [
+    { "bopomofo": "ㄍㄥˋ", "ivsIndex": 0, "example": "更加、更好" },
+    { "bopomofo": "ㄍㄥ", "ivsIndex": 1, "example": "更改、半夜三更" }
+  ],
+  "模": [
+    { "bopomofo": "ㄇㄛˊ", "ivsIndex": 0, "example": "模仿、模型" },
+    { "bopomofo": "ㄇㄨˊ", "ivsIndex": 1, "example": "模樣、字模" }
+  ],
+  "便": [
+    { "bopomofo": "ㄅㄧㄢˋ", "ivsIndex": 0, "example": "方便、便利" },
+    { "bopomofo": "ㄆㄧㄢˊ", "ivsIndex": 1, "example": "便宜、大腹便便" }
+  ],
+  "盛": [
+    { "bopomofo": "ㄕㄥˋ", "ivsIndex": 0, "example": "茂盛、盛開" },
+    { "bopomofo": "ㄔㄥˊ", "ivsIndex": 1, "example": "盛飯、盛水" }
+  ],
+  "漂": [
+    { "bopomofo": "ㄆㄧㄠ", "ivsIndex": 0, "example": "漂流、漂浮" },
+    { "bopomofo": "ㄆㄧㄠˋ", "ivsIndex": 1, "example": "漂亮" },
+    { "bopomofo": "ㄆㄧㄠˇ", "ivsIndex": 2, "example": "漂白" }
+  ],
+  "散": [
+    { "bopomofo": "ㄙㄢˋ", "ivsIndex": 0, "example": "散步、分散" },
+    { "bopomofo": "ㄙㄢˇ", "ivsIndex": 1, "example": "散文、鬆散" }
+  ],
+  "供": [
+    { "bopomofo": "ㄍㄨㄥ", "ivsIndex": 0, "example": "提供、供應" },
+    { "bopomofo": "ㄍㄨㄥˋ", "ivsIndex": 1, "example": "供奉、口供" }
+  ],
+  "強": [
+    { "bopomofo": "ㄑㄧㄤˊ", "ivsIndex": 0, "example": "強大、堅強" },
+    { "bopomofo": "ㄑㄧㄤˇ", "ivsIndex": 1, "example": "勉強、強迫" },
+    { "bopomofo": "ㄐㄧㄤˋ", "ivsIndex": 2, "example": "倔強" }
+  ],
+  "惡": [
+    { "bopomofo": "ㄜˋ", "ivsIndex": 0, "example": "邪惡、惡劣" },
+    { "bopomofo": "ㄨˋ", "ivsIndex": 1, "example": "厭惡、好逸惡勞" },
+    { "bopomofo": "ㄜˇ", "ivsIndex": 2, "example": "噁心（通惡）" }
+  ],
+  "塞": [
+    { "bopomofo": "ㄙㄞ", "ivsIndex": 0, "example": "塞車、瓶塞" },
+    { "bopomofo": "ㄙㄜˋ", "ivsIndex": 1, "example": "堵塞、茅塞頓開" },
+    { "bopomofo": "ㄙㄞˋ", "ivsIndex": 2, "example": "邊塞、塞外" }
+  ],
+  "參": [
+    { "bopomofo": "ㄘㄢ", "ivsIndex": 0, "example": "參加、參觀" },
+    { "bopomofo": "ㄕㄣ", "ivsIndex": 1, "example": "人參" },
+    { "bopomofo": "ㄘㄣ", "ivsIndex": 2, "example": "參差" }
+  ],
+  "載": [
+    { "bopomofo": "ㄗㄞˋ", "ivsIndex": 0, "example": "載重、下載(真的是唸四聲...)" },
+    { "bopomofo": "ㄗㄞˇ", "ivsIndex": 1, "example": "記載、三年五載" }
+  ],
+  "藏": [
+    { "bopomofo": "ㄘㄤˊ", "ivsIndex": 0, "example": "躲藏、收藏" },
+    { "bopomofo": "ㄗㄤˋ", "ivsIndex": 1, "example": "寶藏、西藏" }
+  ],
+  "宿": [
+    { "bopomofo": "ㄙㄨˋ", "ivsIndex": 0, "example": "宿舍、住宿" },
+    { "bopomofo": "ㄒㄧㄡˇ", "ivsIndex": 1, "example": "一宿、整宿" },
+    { "bopomofo": "ㄒㄧㄡˋ", "ivsIndex": 2, "example": "星宿" }
+  ],
+  "薄": [
+    { "bopomofo": "ㄅㄠˊ", "ivsIndex": 0, "example": "薄餅、厚薄" },
+    { "bopomofo": "ㄅㄛˊ", "ivsIndex": 1, "example": "薄弱、刻薄" },
+    { "bopomofo": "ㄅㄛˋ", "ivsIndex": 2, "example": "薄荷" }
+  ],
+  "露": [
+    { "bopomofo": "ㄌㄨˋ", "ivsIndex": 0, "example": "露水、露天" },
+    { "bopomofo": "ㄌㄡˋ", "ivsIndex": 1, "example": "露臉、露馬腳" }
+  ],
+  "曲": [
+    { "bopomofo": "ㄑㄩ", "ivsIndex": 0, "example": "彎曲、是非曲直" },
+    { "bopomofo": "ㄑㄩˇ", "ivsIndex": 1, "example": "歌曲、樂曲" }
+  ],
+  "折": [
+    { "bopomofo": "ㄓㄜˊ", "ivsIndex": 0, "example": "折紙、打折" },
+    { "bopomofo": "ㄕㄜˊ", "ivsIndex": 1, "example": "折本、折了腿" },
+    { "bopomofo": "ㄓㄜ", "ivsIndex": 2, "example": "折騰" }
+  ],
+  "屏": [
+    { "bopomofo": "ㄆㄧㄥˊ", "ivsIndex": 0, "example": "屏幕、屏風" },
+    { "bopomofo": "ㄅㄧㄥˇ", "ivsIndex": 1, "example": "屏息、屏除" }
+  ],
+  "系": [
+    { "bopomofo": "ㄒㄧˋ", "ivsIndex": 0, "example": "系統、關係" },
+    { "bopomofo": "ㄐㄧˋ", "ivsIndex": 1, "example": "系鞋帶（通繫）" }
+  ],
+  "冠": [
+    { "bopomofo": "ㄍㄨㄢ", "ivsIndex": 0, "example": "皇冠、衣冠" },
+    { "bopomofo": "ㄍㄨㄢˋ", "ivsIndex": 1, "example": "冠軍、張冠李戴" }
+  ],
+  "鮮": [
+    { "bopomofo": "ㄒㄧㄢ", "ivsIndex": 0, "example": "新鮮、鮮花" },
+    { "bopomofo": "ㄒㄧㄢˇ", "ivsIndex": 1, "example": "鮮少、寡廉鮮恥" }
+  ],
+  "說": [
+    { "bopomofo": "ㄕㄨㄛ", "ivsIndex": 0, "example": "說話、說明" },
+    { "bopomofo": "ㄕㄨㄟˋ", "ivsIndex": 1, "example": "遊說、說客（古文）" },
+    { "bopomofo": "ㄩㄝˋ", "ivsIndex": 2, "example": "不亦說乎（通悅）" }
+  ],
+  "見": [
+    { "bopomofo": "ㄐㄧㄢˋ", "ivsIndex": 0, "example": "看見、見面" },
+    { "bopomofo": "ㄒㄧㄢˋ", "ivsIndex": 1, "example": "圖窮匕見（通現）" }
+  ],
+  "語": [
+    { "bopomofo": "ㄩˇ", "ivsIndex": 0, "example": "語言、成語" },
+    { "bopomofo": "ㄩˋ", "ivsIndex": 1, "example": "不以語人（告訴）" }
+  ],
+  "遺": [
+    { "bopomofo": "ㄧˊ", "ivsIndex": 0, "example": "遺失、遺產" },
+    { "bopomofo": "ㄨㄟˋ", "ivsIndex": 1, "example": "饋遺、贈遺（古文）" }
+  ],
+  "王": [
+    { "bopomofo": "ㄨㄤˊ", "ivsIndex": 0, "example": "國王、大王" },
+    { "bopomofo": "ㄨㄤˋ", "ivsIndex": 1, "example": "稱王、王天下（古文）" }
+  ],
+  "衣": [
+    { "bopomofo": "ㄧ", "ivsIndex": 0, "example": "衣服、上衣" },
+    { "bopomofo": "ㄧˋ", "ivsIndex": 1, "example": "衣錦還鄉（穿衣）" }
+  ],
+  "飲": [
+    { "bopomofo": "ㄧㄣˇ", "ivsIndex": 0, "example": "飲料、飲食" },
+    { "bopomofo": "ㄧㄣˋ", "ivsIndex": 1, "example": "飲馬長城（給牲畜喝水）" }
+  ],
+  "食": [
+    { "bopomofo": "ㄕˊ", "ivsIndex": 0, "example": "食物、飲食" },
+    { "bopomofo": "ㄙˋ", "ivsIndex": 1, "example": "食之（餵養，通飼）" }
+  ],
+  "被": [
+    { "bopomofo": "ㄅㄟˋ", "ivsIndex": 0, "example": "棉被、被動" },
+    { "bopomofo": "ㄆㄧ", "ivsIndex": 1, "example": "被髮左衽（通披）" }
+  ],
+  "單": [
+    { "bopomofo": "ㄉㄢ", "ivsIndex": 0, "example": "孤單、簡單" },
+    { "bopomofo": "ㄕㄢˋ", "ivsIndex": 1, "example": "姓單、單縣" },
+    { "bopomofo": "ㄔㄢˊ", "ivsIndex": 2, "example": "單于（匈奴君主）" }
+  ],
+  "任": [
+    { "bopomofo": "ㄖㄣˋ", "ivsIndex": 0, "example": "任務、責任" },
+    { "bopomofo": "ㄖㄣˊ", "ivsIndex": 1, "example": "姓任、任丘" }
+  ],
+  "華": [
+    { "bopomofo": "ㄏㄨㄚˊ", "ivsIndex": 0, "example": "中華、華麗" },
+    { "bopomofo": "ㄏㄨㄚˋ", "ivsIndex": 1, "example": "姓華、華山" },
+    { "bopomofo": "ㄏㄨㄚ", "ivsIndex": 2, "example": "春華秋實（通花）" }
+  ],
+  "解": [
+    { "bopomofo": "ㄐㄧㄝˇ", "ivsIndex": 0, "example": "解決、了解" },
+    { "bopomofo": "ㄐㄧㄝˋ", "ivsIndex": 1, "example": "押解、解送" },
+    { "bopomofo": "ㄒㄧㄝˋ", "ivsIndex": 2, "example": "姓解、渾身解數" }
+  ],
+  "區": [
+    { "bopomofo": "ㄑㄩ", "ivsIndex": 0, "example": "地區、區別" },
+    { "bopomofo": "ㄡ", "ivsIndex": 1, "example": "姓區" }
+  ],
+  "查": [
+    { "bopomofo": "ㄔㄚˊ", "ivsIndex": 0, "example": "檢查、調查" },
+    { "bopomofo": "ㄓㄚ", "ivsIndex": 1, "example": "姓查（如查良鏞）" }
+  ],
+  "蓋": [
+    { "bopomofo": "ㄍㄞˋ", "ivsIndex": 0, "example": "蓋子、蓋房子" },
+    { "bopomofo": "ㄍㄜˇ", "ivsIndex": 1, "example": "姓蓋" }
+  ],
+  "仇": [
+    { "bopomofo": "ㄔㄡˊ", "ivsIndex": 0, "example": "仇恨、報仇" },
+    { "bopomofo": "ㄑㄧㄡˊ", "ivsIndex": 1, "example": "姓仇" }
+  ],
+  "尉": [
+    { "bopomofo": "ㄨㄟˋ", "ivsIndex": 0, "example": "上尉、太尉" },
+    { "bopomofo": "ㄩˋ", "ivsIndex": 1, "example": "尉遲（複姓）" }
+  ],
+  "朴": [
+    { "bopomofo": "ㄆㄨˊ", "ivsIndex": 0, "example": "朴實、厚朴" },
+    { "bopomofo": "ㄆㄧㄠˊ", "ivsIndex": 1, "example": "姓朴" },
+    { "bopomofo": "ㄆㄛˋ", "ivsIndex": 2, "example": "朴刀" }
+  ],
+  "會": [
+    { "bopomofo": "ㄏㄨㄟˋ", "ivsIndex": 0, "example": "開會、學會" },
+    { "bopomofo": "ㄎㄨㄞˋ", "ivsIndex": 1, "example": "會計、會稽（古地名）" }
+  ],
+  "龜": [
+    { "bopomofo": "ㄍㄨㄟ", "ivsIndex": 0, "example": "烏龜、海龜" },
+    { "bopomofo": "ㄐㄩㄣ", "ivsIndex": 1, "example": "龜裂（皮膚乾裂）" },
+    { "bopomofo": "ㄑㄧㄡ", "ivsIndex": 2, "example": "龜茲（古西域國名）" }
+  ],
+  "番": [
+    { "bopomofo": "ㄈㄢ", "ivsIndex": 0, "example": "番茄、輪番" },
+    { "bopomofo": "ㄆㄢ", "ivsIndex": 1, "example": "番禺（地名）" }
+  ],
+  "吐": [
+    { "bopomofo": "ㄊㄨˇ", "ivsIndex": 0, "example": "吐氣、吐露" },
+    { "bopomofo": "ㄊㄨˋ", "ivsIndex": 1, "example": "嘔吐、上吐下瀉" },
+    { "bopomofo": "ㄅㄛ", "ivsIndex": 2, "example": "吐蕃（古國名）" }
+  ],
+  "蛤": [
+    { "bopomofo": "ㄍㄜˊ", "ivsIndex": 0, "example": "蛤蜊、文蛤" },
+    { "bopomofo": "ㄏㄚˊ", "ivsIndex": 1, "example": "蛤蟆" }
+  ],
+  "蝦": [
+    { "bopomofo": "ㄒㄧㄚ", "ivsIndex": 0, "example": "蝦子、龍蝦" },
+    { "bopomofo": "ㄏㄚˊ", "ivsIndex": 1, "example": "蝦蟆（同蛤蟆）" }
+  ],
+  "校": [
+    { "bopomofo": "ㄒㄧㄠˋ", "ivsIndex": 0, "example": "學校、校長" },
+    { "bopomofo": "ㄐㄧㄠˋ", "ivsIndex": 1, "example": "校對、校正" }
+  ],
+  "畜": [
+    { "bopomofo": "ㄒㄩˋ", "ivsIndex": 0, "example": "畜牧、畜養" },
+    { "bopomofo": "ㄔㄨˋ", "ivsIndex": 1, "example": "牲畜、家畜" }
+  ],
+  "圈": [
+    { "bopomofo": "ㄑㄩㄢ", "ivsIndex": 0, "example": "圓圈、圈選" },
+    { "bopomofo": "ㄐㄩㄢˋ", "ivsIndex": 1, "example": "豬圈、羊圈" },
+    { "bopomofo": "ㄐㄩㄢ", "ivsIndex": 2, "example": "圈起來" }
+  ],
+  "血": [
+    { "bopomofo": "ㄒㄧㄝˇ", "ivsIndex": 0, "example": "流血、血淋淋（口語）" },
+    { "bopomofo": "ㄒㄩㄝˋ", "ivsIndex": 1, "example": "血液、心血（書面）" }
+  ],
+  "骨": [
+    { "bopomofo": "ㄍㄨˇ", "ivsIndex": 0, "example": "骨頭、骨折" },
+    { "bopomofo": "ㄍㄨ", "ivsIndex": 1, "example": "骨朵兒（花苞）" }
+  ],
+  "核": [
+    { "bopomofo": "ㄏㄜˊ", "ivsIndex": 0, "example": "核心、核桃" },
+    { "bopomofo": "ㄏㄨˊ", "ivsIndex": 1, "example": "杏核兒、煤核兒" }
+  ],
+  "靡": [
+    { "bopomofo": "ㄇㄧˇ", "ivsIndex": 0, "example": "風靡、萎靡" },
+    { "bopomofo": "ㄇㄧˊ", "ivsIndex": 1, "example": "奢靡、靡費" }
+  ],
+  "拗": [
+    { "bopomofo": "ㄠˋ", "ivsIndex": 0, "example": "拗口、違拗" },
+    { "bopomofo": "ㄋㄧㄡˋ", "ivsIndex": 1, "example": "執拗、脾氣很拗" },
+    { "bopomofo": "ㄠˇ", "ivsIndex": 2, "example": "拗斷" }
+  ],
+  "創": [
+    { "bopomofo": "ㄔㄨㄤˋ", "ivsIndex": 0, "example": "創造、創意" },
+    { "bopomofo": "ㄔㄨㄤ", "ivsIndex": 1, "example": "創傷、重創" }
+  ],
+  "喪": [
+    { "bopomofo": "ㄙㄤˋ", "ivsIndex": 0, "example": "喪失、沮喪" },
+    { "bopomofo": "ㄙㄤ", "ivsIndex": 1, "example": "喪事、治喪" }
+  ],
+  "奔": [
+    { "bopomofo": "ㄅㄣ", "ivsIndex": 0, "example": "奔跑、奔波" },
+    { "bopomofo": "ㄅㄣˋ", "ivsIndex": 1, "example": "投奔、奔頭兒" }
+  ],
+  "泊": [
+    { "bopomofo": "ㄅㄛˊ", "ivsIndex": 0, "example": "停泊、淡泊" },
+    { "bopomofo": "ㄆㄛ", "ivsIndex": 1, "example": "湖泊、血泊" }
+  ],
+  "奇": [
+    { "bopomofo": "ㄑㄧˊ", "ivsIndex": 0, "example": "奇怪、好奇" },
+    { "bopomofo": "ㄐㄧ", "ivsIndex": 1, "example": "奇數、奇偶" }
+  ],
+  "卡": [
+    { "bopomofo": "ㄎㄚˇ", "ivsIndex": 0, "example": "卡片、卡通" },
+    { "bopomofo": "ㄑㄧㄚˇ", "ivsIndex": 1, "example": "卡住、關卡" }
+  ],
+  "扒": [
+    { "bopomofo": "ㄅㄚ", "ivsIndex": 0, "example": "扒開、扒土" },
+    { "bopomofo": "ㄆㄚˊ", "ivsIndex": 1, "example": "扒手、扒竊" }
+  ],
+  "咽": [
+    { "bopomofo": "ㄧㄢ", "ivsIndex": 0, "example": "咽喉" },
+    { "bopomofo": "ㄧㄢˋ", "ivsIndex": 1, "example": "吞咽（同嚥）" },
+    { "bopomofo": "ㄧㄝˋ", "ivsIndex": 2, "example": "嗚咽、哽咽" }
+  ],
+  "艾": [
+    { "bopomofo": "ㄞˋ", "ivsIndex": 0, "example": "艾草、方興未艾" },
+    { "bopomofo": "ㄧˋ", "ivsIndex": 1, "example": "自怨自艾" }
+  ],
+  "臭": [
+    { "bopomofo": "ㄔㄡˋ", "ivsIndex": 0, "example": "臭味、臭豆腐" },
+    { "bopomofo": "ㄒㄧㄡˋ", "ivsIndex": 1, "example": "無聲無臭、銅臭" }
+  ],
+  "度": [
+    { "bopomofo": "ㄉㄨˋ", "ivsIndex": 0, "example": "溫度、態度" },
+    { "bopomofo": "ㄉㄨㄛˋ", "ivsIndex": 1, "example": "揣度、審時度勢" }
+  ],
+  "沒": [
+    { "bopomofo": "ㄇㄟˊ", "ivsIndex": 0, "example": "沒有、沒事" },
+    { "bopomofo": "ㄇㄛˋ", "ivsIndex": 1, "example": "淹沒、出沒" }
+  ],
+  "秘": [
+    { "bopomofo": "ㄇㄧˋ", "ivsIndex": 0, "example": "秘密、秘書" },
+    { "bopomofo": "ㄅㄧˋ", "ivsIndex": 1, "example": "秘魯（國名）" }
+  ],
+  "率": [
+    { "bopomofo": "ㄕㄨㄞˋ", "ivsIndex": 0, "example": "率領、坦率" },
+    { "bopomofo": "ㄌㄩˋ", "ivsIndex": 1, "example": "效率、機率" }
+  ],
+  "切": [
+    { "bopomofo": "ㄑㄧㄝ", "ivsIndex": 0, "example": "切菜、切開" },
+    { "bopomofo": "ㄑㄧㄝˋ", "ivsIndex": 1, "example": "親切、一切" }
+  ],
+  "薄": [
+    { "bopomofo": "ㄅㄠˊ", "ivsIndex": 0, "example": "薄餅、厚薄" },
+    { "bopomofo": "ㄅㄛˊ", "ivsIndex": 1, "example": "薄弱、刻薄" },
+    { "bopomofo": "ㄅㄛˋ", "ivsIndex": 2, "example": "薄荷" }
+  ],
+  "卷": [
+    { "bopomofo": "ㄐㄩㄢˋ", "ivsIndex": 0, "example": "考卷、試卷" },
+    { "bopomofo": "ㄐㄩㄢˇ", "ivsIndex": 1, "example": "卷尺、風起雲卷" }
+  ],
+  "累": [
+    { "bopomofo": "ㄌㄟˋ", "ivsIndex": 0, "example": "疲累、勞累" },
+    { "bopomofo": "ㄌㄟˇ", "ivsIndex": 1, "example": "累積、日積月累" },
+    { "bopomofo": "ㄌㄟˊ", "ivsIndex": 2, "example": "果實累累、累贅" }
+  ],
+  "鋪": [
+    { "bopomofo": "ㄆㄨ", "ivsIndex": 0, "example": "鋪床、鋪路" },
+    { "bopomofo": "ㄆㄨˋ", "ivsIndex": 1, "example": "店鋪、床鋪" }
+  ],
+  "挑": [
+    { "bopomofo": "ㄊㄧㄠ", "ivsIndex": 0, "example": "挑選、挑水" },
+    { "bopomofo": "ㄊㄧㄠˇ", "ivsIndex": 1, "example": "挑戰、挑撥" }
+  ],
+  "縫": [
+    { "bopomofo": "ㄈㄥˊ", "ivsIndex": 0, "example": "縫補、裁縫" },
+    { "bopomofo": "ㄈㄥˋ", "ivsIndex": 1, "example": "縫隙、裂縫" }
+  ],
+  "磨": [
+    { "bopomofo": "ㄇㄛˊ", "ivsIndex": 0, "example": "磨練、折磨" },
+    { "bopomofo": "ㄇㄛˋ", "ivsIndex": 1, "example": "石磨、磨坊" }
+  ],
+  "禁": [
+    { "bopomofo": "ㄐㄧㄣˋ", "ivsIndex": 0, "example": "禁止、嚴禁" },
+    { "bopomofo": "ㄐㄧㄣ", "ivsIndex": 1, "example": "不禁、弱不禁風" }
+  ],
+  "扇": [
+    { "bopomofo": "ㄕㄢˋ", "ivsIndex": 0, "example": "扇子、電風扇" },
+    { "bopomofo": "ㄕㄢ", "ivsIndex": 1, "example": "扇風、扇動" }
+  ],
+  "籠": [
+    { "bopomofo": "ㄌㄨㄥˊ", "ivsIndex": 0, "example": "鳥籠、蒸籠" },
+    { "bopomofo": "ㄌㄨㄥˇ", "ivsIndex": 1, "example": "籠罩、拉攏" }
+  ],
+  "蒙": [
+    { "bopomofo": "ㄇㄥˊ", "ivsIndex": 0, "example": "啟蒙、蒙蔽" },
+    { "bopomofo": "ㄇㄥ", "ivsIndex": 1, "example": "蒙騙、瞎蒙" },
+    { "bopomofo": "ㄇㄥˇ", "ivsIndex": 2, "example": "蒙古" }
+  ],
+  "粘": [
+    { "bopomofo": "ㄋㄧㄢˊ", "ivsIndex": 0, "example": "粘貼（同黏）" },
+    { "bopomofo": "ㄓㄢ", "ivsIndex": 1, "example": "姓粘" }
+  ],
+  "哄": [
+    { "bopomofo": "ㄏㄨㄥˇ", "ivsIndex": 0, "example": "哄騙、哄小孩" },
+    { "bopomofo": "ㄏㄨㄥ", "ivsIndex": 1, "example": "哄堂大笑" },
+    { "bopomofo": "ㄏㄨㄥˋ", "ivsIndex": 2, "example": "一哄而散、起哄" }
+  ],
+  "爪": [
+    { "bopomofo": "ㄓㄠˇ", "ivsIndex": 0, "example": "爪牙、張牙舞爪" },
+    { "bopomofo": "ㄓㄨㄚˇ", "ivsIndex": 1, "example": "爪子、雞爪" }
+  ],
+  "模": [
+    { "bopomofo": "ㄇㄛˊ", "ivsIndex": 0, "example": "模仿、模型" },
+    { "bopomofo": "ㄇㄨˊ", "ivsIndex": 1, "example": "模樣、字模" }
+  ],
+  "宿": [
+    { "bopomofo": "ㄙㄨˋ", "ivsIndex": 0, "example": "宿舍、住宿" },
+    { "bopomofo": "ㄒㄧㄡˇ", "ivsIndex": 1, "example": "一宿、整宿" },
+    { "bopomofo": "ㄒㄧㄡˋ", "ivsIndex": 2, "example": "星宿" }
+  ],
+  "著": [
+    { "bopomofo": "ㄓㄜ˙", "ivsIndex": 0, "example": "看著、走著" },
+    { "bopomofo": "ㄓㄠˊ", "ivsIndex": 1, "example": "著急、睡著" },
+    { "bopomofo": "ㄓㄨㄛˊ", "ivsIndex": 2, "example": "穿著、著陸" },
+    { "bopomofo": "ㄓㄨˋ", "ivsIndex": 3, "example": "著名、著作" }
+  ],
+  "一": [
+    { "bopomofo": "ㄧ", "ivsIndex": 0, "example": "一二三、第一（本音）" },
+    { "bopomofo": "ㄧˊ", "ivsIndex": 1, "example": "一個、一樣（在四聲字前）" },
+    { "bopomofo": "ㄧˋ", "ivsIndex": 2, "example": "一天、一起（在一、二、三聲字前）" }
+  ],
+  "不": [
+    { "bopomofo": "ㄅㄨˋ", "ivsIndex": 0, "example": "不好、不行（本音）" },
+    { "bopomofo": "ㄅㄨˊ", "ivsIndex": 1, "example": "不要、不錯（在四聲字前）" }
+  ]
+}
