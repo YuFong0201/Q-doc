@@ -42,27 +42,50 @@ export function initTextEditor() {
     document.documentElement.style.setProperty('--paper-line-height', lineHeightSelect.value);
   }
 
-  // 切換字體（含三款注音字體與無注音標楷體）
-  fontFamilySelect.addEventListener('change', (e) => {
-    const selectedFont = e.target.value;
+  const applyFontSelection = (selectedFont, shouldReflow = true) => {
     const config = FONT_CONFIG_MAP[selectedFont];
+    if (!config) return;
 
-    if (config) {
-      document.documentElement.style.setProperty('--active-bopomofo-font', config.bopoFont);
-      document.documentElement.style.setProperty('--font-plain', config.plainFont);
+    document.documentElement.style.setProperty('--active-bopomofo-font', config.bopoFont);
+    document.documentElement.style.setProperty('--font-plain', config.plainFont);
 
-      // 同步切換「所有頁面」的預設有/無注音狀態
-      getAllPageContainers().forEach((container) => {
-        container.classList.toggle('bopo-default-on', config.hasBopomofo);
-        container.classList.toggle('bopo-default-off', !config.hasBopomofo);
+    getAllPageContainers().forEach((container) => {
+      container.classList.toggle('bopo-default-on', config.hasBopomofo);
+      container.classList.toggle('bopo-default-off', !config.hasBopomofo);
+
+      // 清除因複製貼上或富文本編輯殘留的內聯 font-family，確保全卷字體切換 100% 生效
+      container.querySelectorAll('[style*="font-family"]').forEach((el) => {
+        el.style.removeProperty('font-family');
+      });
+      container.querySelectorAll('font[face]').forEach((fontEl) => {
+        fontEl.removeAttribute('face');
       });
 
-      updateState('bopomofoDefaultOn', config.hasBopomofo);
-    }
+      // 若切回無注音模式，已手動選過破音讀音的字仍自動維持強制顯示注音
+      container.querySelectorAll('.char-token').forEach((token) => {
+        const ivs = parseInt(token.dataset.ivsIndex || '0', 10);
+        if (!config.hasBopomofo && ivs > 0 && !token.classList.contains('hide-bopo')) {
+          token.classList.add('force-bopo');
+        }
+      });
+    });
 
+    updateState('bopomofoDefaultOn', config.hasBopomofo);
     updateState('fontFamily', selectedFont);
-    reflowPages();
-  });
+    if (shouldReflow) reflowPages();
+  };
+
+  // 啟動時立即同步一次預設字體狀態
+  if (fontFamilySelect?.value) {
+    applyFontSelection(fontFamilySelect.value, false);
+  }
+
+  // 切換字體（含三款注音字體與無注音標楷體）
+  if (fontFamilySelect) {
+    fontFamilySelect.addEventListener('change', (e) => {
+      applyFontSelection(e.target.value, true);
+    });
+  }
 
   // 粗體、斜體、底線、對齊指令
   document.querySelectorAll('[data-cmd]').forEach((btn) => {
@@ -73,27 +96,33 @@ export function initTextEditor() {
   });
 
   // 調整字體大小（同步套用至全卷所有頁面並重新計算分頁）
-  fontSizeSelect.addEventListener('change', (e) => {
-    const newSize = e.target.value;
-    document.documentElement.style.setProperty('--paper-font-size', newSize);
-    getAllPageContainers().forEach((container) => {
-      container.style.fontSize = newSize;
+  if (fontSizeSelect) {
+    fontSizeSelect.addEventListener('change', (e) => {
+      const newSize = e.target.value;
+      document.documentElement.style.setProperty('--paper-font-size', newSize);
+      getAllPageContainers().forEach((container) => {
+        container.style.fontSize = newSize;
+      });
+      reflowPages();
     });
-    reflowPages();
-  });
+  }
 
   // 調整行距（同步套用至全卷所有頁面並重新計算分頁）
-  lineHeightSelect.addEventListener('change', (e) => {
-    const newLineHeight = e.target.value;
-    document.documentElement.style.setProperty('--paper-line-height', newLineHeight);
-    getAllPageContainers().forEach((container) => {
-      container.style.lineHeight = newLineHeight;
+  if (lineHeightSelect) {
+    lineHeightSelect.addEventListener('change', (e) => {
+      const newLineHeight = e.target.value;
+      document.documentElement.style.setProperty('--paper-line-height', newLineHeight);
+      getAllPageContainers().forEach((container) => {
+        container.style.lineHeight = newLineHeight;
+      });
+      reflowPages();
     });
-    reflowPages();
-  });
+  }
 
   // 調整選取文字顏色
-  colorInput.addEventListener('input', (e) => {
-    document.execCommand('foreColor', false, e.target.value);
-  });
+  if (colorInput) {
+    colorInput.addEventListener('input', (e) => {
+      document.execCommand('foreColor', false, e.target.value);
+    });
+  }
 }

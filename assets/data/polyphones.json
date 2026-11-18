@@ -27,9 +27,9 @@
   ],
   "和": [
     { "bopomofo": "ㄏㄜˊ", "ivsIndex": 0, "example": "和平、我和你" },
-    { "bopomofo": "ㄏㄢˋ", "ivsIndex": 1, "example": "你和我（口語）" },
+    { "bopomofo": "ㄏㄜˋ", "ivsIndex": 1, "example": "附和、曲高和寡" },
     { "bopomofo": "ㄏㄨㄛˋ", "ivsIndex": 2, "example": "和麵、和稀泥" },
-    { "bopomofo": "ㄏㄜˋ", "ivsIndex": 3, "example": "附和、曲高和寡" }
+    { "bopomofo": "ㄏㄢˋ", "ivsIndex": 3, "example": "你和我（口語）" }
   ],
   "得": [
     { "bopomofo": "ㄉㄜˊ", "ivsIndex": 0, "example": "得到、得分" },
@@ -38,8 +38,8 @@
   ],
   "的": [
     { "bopomofo": "ㄉㄜ˙", "ivsIndex": 0, "example": "我的、紅紅的" },
-    { "bopomofo": "ㄉㄧˋ", "ivsIndex": 1, "example": "目的、標的" },
-    { "bopomofo": "ㄉㄧˊ", "ivsIndex": 2, "example": "的確" }
+    { "bopomofo": "ㄉㄧˊ", "ivsIndex": 1, "example": "的確" },
+    { "bopomofo": "ㄉㄧˋ", "ivsIndex": 2, "example": "目的、標的" }
   ],
   "地": [
     { "bopomofo": "ㄉㄧˋ", "ivsIndex": 0, "example": "土地、地球" },
@@ -51,8 +51,8 @@
   ],
   "著": [
     { "bopomofo": "ㄓㄜ˙", "ivsIndex": 0, "example": "看著、走著" },
-    { "bopomofo": "ㄓㄠˊ", "ivsIndex": 1, "example": "著急、睡著" },
-    { "bopomofo": "ㄓㄨㄛˊ", "ivsIndex": 2, "example": "穿著、著陸" },
+    { "bopomofo": "ㄓㄨㄛˊ", "ivsIndex": 1, "example": "穿著、著陸" },
+    { "bopomofo": "ㄓㄠˊ", "ivsIndex": 2, "example": "著急、睡著" },
     { "bopomofo": "ㄓㄨˋ", "ivsIndex": 3, "example": "著名、著作" }
   ],
   "為": [
@@ -109,8 +109,8 @@
   ],
   "落": [
     { "bopomofo": "ㄌㄨㄛˋ", "ivsIndex": 0, "example": "落葉、降落" },
-    { "bopomofo": "ㄌㄚˋ", "ivsIndex": 1, "example": "丟三落四、落掉" },
-    { "bopomofo": "ㄌㄠˋ", "ivsIndex": 2, "example": "落枕、落色" }
+    { "bopomofo": "ㄌㄠˋ", "ivsIndex": 1, "example": "落枕、落色" },
+    { "bopomofo": "ㄌㄚˋ", "ivsIndex": 2, "example": "丟三落四、落掉" }
   ],
   "差": [
     { "bopomofo": "ㄔㄚ", "ivsIndex": 0, "example": "差別、相差" },
@@ -212,8 +212,8 @@
   ],
   "漂": [
     { "bopomofo": "ㄆㄧㄠ", "ivsIndex": 0, "example": "漂流、漂浮" },
-    { "bopomofo": "ㄆㄧㄠˋ", "ivsIndex": 1, "example": "漂亮" },
-    { "bopomofo": "ㄆㄧㄠˇ", "ivsIndex": 2, "example": "漂白" }
+    { "bopomofo": "ㄆㄧㄠˇ", "ivsIndex": 1, "example": "漂白" },
+    { "bopomofo": "ㄆㄧㄠˋ", "ivsIndex": 2, "example": "漂亮" }
   ],
   "散": [
     { "bopomofo": "ㄙㄢˋ", "ivsIndex": 0, "example": "散步、分散" },
@@ -244,7 +244,7 @@
     { "bopomofo": "ㄘㄣ", "ivsIndex": 2, "example": "參差" }
   ],
   "載": [
-    { "bopomofo": "ㄗㄞˋ", "ivsIndex": 0, "example": "載重、下載(真的是唸四聲...)" },
+    { "bopomofo": "ㄗㄞˋ", "ivsIndex": 0, "example": "載重、下載" },
     { "bopomofo": "ㄗㄞˇ", "ivsIndex": 1, "example": "記載、三年五載" }
   ],
   "藏": [
@@ -492,11 +492,6 @@
     { "bopomofo": "ㄑㄧㄝ", "ivsIndex": 0, "example": "切菜、切開" },
     { "bopomofo": "ㄑㄧㄝˋ", "ivsIndex": 1, "example": "親切、一切" }
   ],
-  "薄": [
-    { "bopomofo": "ㄅㄠˊ", "ivsIndex": 0, "example": "薄餅、厚薄" },
-    { "bopomofo": "ㄅㄛˊ", "ivsIndex": 1, "example": "薄弱、刻薄" },
-    { "bopomofo": "ㄅㄛˋ", "ivsIndex": 2, "example": "薄荷" }
-  ],
   "卷": [
     { "bopomofo": "ㄐㄩㄢˋ", "ivsIndex": 0, "example": "考卷、試卷" },
     { "bopomofo": "ㄐㄩㄢˇ", "ivsIndex": 1, "example": "卷尺、風起雲卷" }
@@ -536,8 +531,8 @@
   ],
   "蒙": [
     { "bopomofo": "ㄇㄥˊ", "ivsIndex": 0, "example": "啟蒙、蒙蔽" },
-    { "bopomofo": "ㄇㄥ", "ivsIndex": 1, "example": "蒙騙、瞎蒙" },
-    { "bopomofo": "ㄇㄥˇ", "ivsIndex": 2, "example": "蒙古" }
+    { "bopomofo": "ㄇㄥˇ", "ivsIndex": 1, "example": "蒙古" },
+    { "bopomofo": "ㄇㄥ", "ivsIndex": 2, "example": "蒙騙、瞎蒙" }
   ],
   "粘": [
     { "bopomofo": "ㄋㄧㄢˊ", "ivsIndex": 0, "example": "粘貼（同黏）" },
@@ -551,21 +546,6 @@
   "爪": [
     { "bopomofo": "ㄓㄠˇ", "ivsIndex": 0, "example": "爪牙、張牙舞爪" },
     { "bopomofo": "ㄓㄨㄚˇ", "ivsIndex": 1, "example": "爪子、雞爪" }
-  ],
-  "模": [
-    { "bopomofo": "ㄇㄛˊ", "ivsIndex": 0, "example": "模仿、模型" },
-    { "bopomofo": "ㄇㄨˊ", "ivsIndex": 1, "example": "模樣、字模" }
-  ],
-  "宿": [
-    { "bopomofo": "ㄙㄨˋ", "ivsIndex": 0, "example": "宿舍、住宿" },
-    { "bopomofo": "ㄒㄧㄡˇ", "ivsIndex": 1, "example": "一宿、整宿" },
-    { "bopomofo": "ㄒㄧㄡˋ", "ivsIndex": 2, "example": "星宿" }
-  ],
-  "著": [
-    { "bopomofo": "ㄓㄜ˙", "ivsIndex": 0, "example": "看著、走著" },
-    { "bopomofo": "ㄓㄠˊ", "ivsIndex": 1, "example": "著急、睡著" },
-    { "bopomofo": "ㄓㄨㄛˊ", "ivsIndex": 2, "example": "穿著、著陸" },
-    { "bopomofo": "ㄓㄨˋ", "ivsIndex": 3, "example": "著名、著作" }
   ],
   "一": [
     { "bopomofo": "ㄧ", "ivsIndex": 0, "example": "一二三、第一（本音）" },
