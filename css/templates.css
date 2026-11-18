@@ -137,7 +137,7 @@
   margin-top: 4px;
 }
 
-/* 2. 選擇題結構與精密縮排對齊 */
+/* 2. 選擇題結構與精密縮排對齊（選項 (A)(B)(C)(D) 左緣精準對齊題號 1.） */
 .mc-stem-row {
   display: flex;
   align-items: flex-start;
@@ -147,6 +147,22 @@
 .mc-prefix {
   flex-shrink: 0;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.mc-bracket {
+  display: inline-block;
+  width: 3.1em;
+  flex-shrink: 0;
+}
+
+.mc-options-grid {
+  display: grid;
+  gap: 8px 16px;
+  margin-top: 6px;
+  padding-left: 3.1em;
+  align-items: start;
 }
 
 .mc-stem-text {
@@ -154,13 +170,6 @@
   min-width: 0;
 }
 
-.mc-options-grid {
-  display: grid;
-  gap: 8px 16px;
-  margin-top: 6px;
-  padding-left: 5.2em;
-  align-items: start;
-}
 .mc-options-grid.cols-1 { grid-template-columns: 1fr; }
 .mc-options-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
 .mc-options-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }

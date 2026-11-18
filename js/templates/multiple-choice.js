@@ -26,7 +26,7 @@ export default {
     return `
       <div class="tpl-mc">
         <div class="mc-stem-row">
-          <span class="mc-prefix" contenteditable="true">（ ）<span class="auto-q-num">1</span>.</span>
+          <span class="mc-prefix" contenteditable="true"><span class="mc-bracket">（ ）</span><span class="auto-q-num">1</span>.</span>
           <div class="mc-stem-text" contenteditable="true">
             題目內容?
             <span class="tpl-inline-controls" contenteditable="false">
