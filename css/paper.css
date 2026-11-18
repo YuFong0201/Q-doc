@@ -90,14 +90,16 @@
   overflow: visible;
 }
 
-/* 雙欄排版模式（仿 Word 先填滿左欄再自動流向右欄，並預留頂部空間防止首題懸浮工具列被裁切） */
+/* 雙欄排版模式（修正：使用 flex: 1 填滿標頭下方剩餘高度，不再用 height: 100% 撐爆頁面） */
 .blocks-container.cols-2 {
   display: block;
+  flex: 1;
+  min-height: 0;
+  height: auto;
   column-count: 2;
   column-gap: 11mm;
   column-fill: auto;
-  height: 100%;
-  padding-top: 16px;
+  padding-top: 12px;
   box-sizing: border-box;
 }
 
@@ -222,17 +224,6 @@ body.read-aloud-mode .blocks-container.cols-2 {
 .char-token.is-hard-vocab {
   border-bottom: 2px dashed #8b5cf6;
   background-color: rgba(139, 92, 246, 0.08);
-}
-
-@media print {
-  .char-token.is-hard-vocab {
-    border-bottom: none !important;
-    background-color: transparent !important;
-  }
-
-  .blocks-container.cols-2 {
-    padding-top: 0 !important;
-  }
 }
 
 /* 題型區塊卡片 (Question Block) */
@@ -450,10 +441,4 @@ body.student-blank-mode .qdoc-answer-key {
   color: transparent !important;
   text-shadow: none !important;
   user-select: none;
-}
-
-@media print {
-  body.student-blank-mode .qdoc-answer-key {
-    color: transparent !important;
-  }
 }

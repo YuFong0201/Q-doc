@@ -25,11 +25,25 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  background: var(--color-lake-blue);
-  color: var(--color-white);
-  font-weight: 900;
+  height: 30px;
+  text-decoration: none;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.logo-mark:hover {
+  transform: scale(1.04);
+  opacity: 0.92;
+}
+
+.logo-img {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
   border-radius: 6px;
 }
 

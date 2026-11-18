@@ -70,14 +70,18 @@ export function applyColumnClassesToAllPages() {
   });
 }
 
-// 同步更新列印時的 @page 紙張大小與方向
+// 同步更新列印時的 @page 紙張大小與方向（使用精確 mm 尺寸避免 ISO/JIS B4 規格衝突）
 function updateDynamicPrintPage() {
   const styleTag = document.getElementById('dynamic-page-style');
   if (!styleTag) return;
 
-  const isB4 = state.paperSize.startsWith('b4');
-  const isLandscape = state.paperSize.endsWith('-landscape');
-  const sizeStr = isB4 ? 'B4' : 'A4';
-  const orientStr = isLandscape ? 'landscape' : 'portrait';
-  styleTag.textContent = `@page { size: ${sizeStr} ${orientStr}; margin: 0; }`;
+  const sizeMap = {
+    'a4-portrait': '210mm 297mm',
+    'a4-landscape': '297mm 210mm',
+    'b4-portrait': '257mm 364mm',
+    'b4-landscape': '364mm 257mm'
+  };
+
+  const exactSize = sizeMap[state.paperSize] || '210mm 297mm';
+  styleTag.textContent = `@page { size: ${exactSize}; margin: 0; }`;
 }

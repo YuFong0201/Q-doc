@@ -1,8 +1,10 @@
-const CACHE_NAME = 'qdoc-offline-v1';
+const CACHE_NAME = 'qdoc-offline-v2';
 const CORE_ASSETS = [
   './',
   './index.html',
+  './favicon.ico',
   './manifest.json',
+  './assets/picture/logo.png',
   './css/variables.css',
   './css/base.css',
   './css/layout.css',

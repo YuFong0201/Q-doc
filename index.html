@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>奇蹟編輯器 Q-doc｜開玩笑的，沒有奇蹟</title>
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="manifest" href="./manifest.json" />
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
@@ -32,7 +35,9 @@
   <header class="app-header">
     <div class="top-bar">
       <div class="brand-area">
-        <a href="https://yufong0201.github.io/Support-Classroom/" target="_blank" rel="noopener noreferrer" class="logo-mark" aria-label="前往 Support Classroom 首頁" title="前往 Support Classroom" style="text-decoration: none;">Q</a>
+        <a href="https://yufong0201.github.io/Support-Classroom/" target="_blank" rel="noopener noreferrer" class="logo-mark" aria-label="前往 Support Classroom 首頁" title="前往 Support Classroom">
+          <img src="./assets/picture/logo.png" alt="奇蹟編輯器 Q-doc Logo" class="logo-img" />
+        </a>
         <span class="app-title">奇蹟編輯器 <small>Q-doc</small></span>
       </div>
       <div class="doc-meta" style="display:flex; align-items:center; gap:8px;">
@@ -46,6 +51,7 @@
         <button type="button" id="btn-export-json" class="btn btn-outline-light" title="下載 .json 專案檔方便分享或備份">💾 匯出專案</button>
         <button type="button" id="btn-import-json" class="btn btn-outline-light" title="開啟已儲存的 .json 專案檔">📂 匯入專案</button>
         <input type="file" id="file-import-json" accept=".json,application/json" hidden />
+        <button type="button" id="btn-export-interactive-quiz" class="btn btn-outline-light" aria-label="匯出學生線上互動測驗 HTML" title="匯出單一獨立免網路可執行的學生平板線上互動測驗檔 (.html)">🌐 匯出線上學習單</button>
         <button type="button" id="btn-toggle-read-aloud" class="btn btn-outline-light" aria-label="切換無障礙語音報讀模式">🔊 無障礙報讀模式</button>
         <button type="button" id="btn-clear-paper" class="btn btn-outline-light" aria-label="清空考卷">🗑️ 清空重來</button>
         <button type="button" id="btn-print" class="btn btn-primary" aria-label="列印或匯出 PDF">🖨️ 列印 / 匯出 PDF</button>

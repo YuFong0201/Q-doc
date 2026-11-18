@@ -11,9 +11,15 @@ import { initScoreCalculator } from './features/scoreCalculator.js';
 import { initCanvasImageDrop } from './features/imageHandler.js';
 import { initStorageManager, clearAutosaveDB } from './features/storage.js';
 import { initVocabChecker } from './features/vocabChecker.js';
-import { initQuizExporter } from './features/quizExporter.js';
+import { initQuizExporter, checkAndMountStudentModeFromUrl } from './features/quizExporter.js';
 
 async function bootstrap() {
+  // 0. 若網址帶有 #quiz=...（學生平板掃描 QR Code 開啟），直接切換為全螢幕學生作答模式（免載入字庫秒開）
+  const isStudentMode = await checkAndMountStudentModeFromUrl();
+  if (isStudentMode) {
+    return;
+  }
+
   // 1. 依序串流載入字嗨注音字體並更新湖水藍進度條
   await loadFontsWithProgress([
     {

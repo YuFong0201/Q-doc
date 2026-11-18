@@ -1,11 +1,18 @@
 @media print {
+  html,
   body {
-    background: white;
-    height: auto;
-    overflow: visible;
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    display: block !important;
   }
 
+  /* 隱藏所有編輯器界面、彈窗與控制按鈕 */
   .app-header,
+  .read-aloud-bar,
   .sidebar-left,
   .polyphone-popover,
   .loading-overlay,
@@ -15,28 +22,69 @@
   .tpl-inline-controls,
   .opt-img-trigger,
   .img-resize-toolbar,
-  .subq-opt-controls {
+  .subq-opt-controls,
+  .ra-speak-block-btn,
+  .sr-only {
     display: none !important;
   }
-  
+
+  /* 解除外層 Flex 鎖定，避免瀏覽器列印引擎把題目與頁尾推到下一頁 */
+  .workspace {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   .canvas-viewport {
-    padding: 0;
-    overflow: visible;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    background: #ffffff !important;
   }
 
   .pages-container {
-    gap: 0;
-    padding-bottom: 0;
+    display: block !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
+/* 列印時紙張容器微縮，防止亞像素或邊界誤差產生多餘空白頁 */
   .paper-page {
-    box-shadow: none;
-    margin: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    position: relative !important;
+    break-after: page;
     page-break-after: always;
   }
 
+  .paper-page.a4-portrait  { width: 210mm !important; height: 296.4mm !important; }
+  .paper-page.a4-landscape { width: 297mm !important; height: 209.4mm !important; }
+  .paper-page.b4-portrait  { width: 257mm !important; height: 363mm !important; }
+  .paper-page.b4-landscape { width: 364mm !important; height: 256.4mm !important; }
+
   .paper-page:last-child {
-    page-break-after: auto;
+    break-after: auto !important;
+    page-break-after: auto !important;
+  }
+
+  /* 確保頁碼角標穩固留在該頁右下角，不會跳到下一頁 */
+  .paper-page::after {
+    position: absolute !important;
+    bottom: 8mm !important;
+    right: 14mm !important;
+  }
+
+  .blocks-container.cols-2 {
+    padding-top: 0 !important;
   }
 
   /* 空白畫布提示在列印時不出現 */
@@ -50,9 +98,16 @@
     background: transparent !important;
   }
 
-  /* 列印時自動隱藏破音字底色提示 */
-  .char-token.is-polyphone {
+  /* 列印時自動隱藏破音字與生難字輔助底色 */
+  .char-token.is-polyphone,
+  .char-token.is-hard-vocab {
     background-color: transparent !important;
     border-bottom: none !important;
+  }
+
+  /* 學生空白卷模式：列印時維持隱藏紅字標準解答 */
+  body.student-blank-mode .qdoc-answer-key {
+    color: transparent !important;
+    text-shadow: none !important;
   }
 }
